@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title><%= json.project.title %></title>
+    <%= t.include("partials/_head.html", grunt.data.json) %>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_dataLayer.html") %>
+      <%= t.include("partials/_gtm.html") %>
+    <% } %>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_gtmNoScript.html") %>
+    <% } %>
+    
+    <responsive-child>
+      <%= t.include("partials/_nav.html") %> 
+
+    
+
+    <div class=" albumSection one" style="height: 800px"></div>
+    <div class=" albumSection two" style="height: 800px"></div>
+    <div class=" albumSection three" style="height: 800px"></div>
+    <div class=" albumSection four" style="height: 800px"></div>
+    <div class=" albumSection five" style="height: 800px; background-color: blue;"></div>
+    <div class=" albumSection six" style="height: 800px"></div>
+    <div class=" albumSection seven" style="height: 800px"></div>
+    <div class=" albumSection eight" style="height: 800px"></div>
+    <div class=" albumSection nine" style="height: 800px"></div>
+    <div class=" albumSection ten" style="height: 800px"></div>
+    <div class=" albumSection eleven" style="height: 800px"></div>
+    <div class=" albumSection twelve" style="height: 800px"></div>
+    <div class=" albumSection thirteen" style="height: 800px"></div>
+    <div class=" albumSection fourteen" style="height: 800px"></div>
+    <div class=" albumSection fifteen" style="height: 800px"></div>
+    <div class=" albumSection sixteen" style="height: 800px"></div>
+    <div class=" albumSection seventeen" style="height: 800px"></div>
+    <div class=" albumSection eighteen" style="height: 800px"></div>
+    <div class=" albumSection nineteen" style="height: 800px"></div>
+    <div class=" albumSection twenty" style="height: 800px"></div>
+
+    </responsive-child>
+
+    <%= t.include("partials/_navBottom.html") %>
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
