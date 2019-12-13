@@ -1,1 +1,133 @@
 @import "seattletimes";
+
+body{
+    font-family: @df-sans;
+
+}
+
+.stickyNav {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #36454f;
+    background-color: white;
+    a{
+        text-decoration: none;
+        margin: auto;
+    }
+    button{
+        font-family: @df-sans;
+        text-align: center;
+        background-color: white;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        margin: 0;
+        width: 32px;
+        height: 32px;
+        color: #36454f; 
+    }
+  }
+  
+  .fixedNav {
+    position: fixed;
+    top:0;
+    z-index: 1;
+  }
+
+  .active{
+      background-color: #ef915c !important;
+  }
+
+  .numContainer{
+    width: 800px;
+    margin: auto;
+    @media (max-width: 801px) {
+        min-width: 0px;
+        width: 95%;
+    }
+      .num{
+        color: #ef915c;
+        font-family: 'Domine', serif;
+        margin: 0;
+        font-size: 40px;
+        font-weight: bold;
+      }
+  }
+  .albumSection{
+    width: 100%;
+    //height: 800px;
+    padding: 0 0 40px 0;
+    .sectionHead{
+        font-family: 'Domine', serif;
+        display: flex;
+
+        width: 800px;
+        margin: auto;
+        border-top: 10px solid #56b3bf;
+        border-right: 10px solid #56b3bf;
+        padding-top: 20px;
+        @media (max-width: 801px) {
+            flex-wrap: wrap;
+            min-width: 0px;
+            width: 95%;
+        }
+        .albumCover{
+            width: 290px;
+            min-width: 290px;
+        }
+        .artCredit{
+            margin: 0 0 5px 0;;
+            color: #70757c;
+            font-style: italic;
+            font-size: 13px;  
+            font-family: @df-sans;
+      
+        }
+        .albumTitleContainer{
+            margin-left: 40px;
+            @media (max-width: 801px) {
+                margin-left: 0px;
+            }
+            p{
+                margin: 0;
+            }
+            .title{
+                font-size: 38px;
+                font-weight: bold;
+            }
+            .artist{
+                font-size: 30px;
+                font-style: italic;
+            }
+        }
+    }
+    .sectionBody{
+        max-width: 630px;
+        margin: auto;
+        .sectionText{
+            display: inline;
+        }
+    }
+  }
+
+.playlist{
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ef915c;
+    .playlistText{
+        font-family: 'Domine', serif;
+        font-size: 28px;
+        font-weight: bold;
+        max-width: 630px;
+        margin: 0 auto 20px auto;
+        text-align: left;
+        border-bottom: 10px solid #56b3bf;
+    }
+    .frame{
+        display: inline;
+    }
+}

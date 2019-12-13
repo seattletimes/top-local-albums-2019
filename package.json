@@ -5,7 +5,7 @@
   "author": "Miranda Hardy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/seattletimes/top-local-albums-2019.git"
+    "url": "git+https://github.com/seattletimes/top-local-albums-2019.git"
   },
   "dependencies": {
     "archieml": "^0.4.2",
@@ -30,7 +30,8 @@
     "resolve": "^1.1.7",
     "shelljs": "^0.6.0",
     "through2": "^2.0.0",
-    "typogr": "^0.6.4"
+    "typogr": "^0.6.4",
+    "waypoints": "^4.0.1"
   },
   "browser": {
     "share": "./src/js/lib/share.min.js",
@@ -44,5 +45,15 @@
       "./tasks/lib/browserify-less",
       "./tasks/lib/browserify-text"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/seattletimes/top-local-albums-2019/issues"
+  },
+  "homepage": "https://github.com/seattletimes/top-local-albums-2019#readme",
+  "main": "Gruntfile.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
 }

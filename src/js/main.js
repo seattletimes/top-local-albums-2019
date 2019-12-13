@@ -2,18 +2,46 @@ var paywall = require("./lib/paywall");
 setTimeout(() => paywall(12345678), 5000);
 
 require("component-responsive-frame/child");
+var data = require("../../data/Sheet1.sheet.json");
 
+var stickyNav = document.querySelector(".stickyNav");
+var stickyNavTop = stickyNav.offsetTop;
+
+function stickyNavigation() {
+    if (window.scrollY >= stickyNavTop) {
+      stickyNav.classList.add('fixedNav');
+    } else {
+      stickyNav.classList.remove('fixedNav');
+    }
+  }
+
+window.addEventListener('scroll', stickyNavigation);
 
 var albumSections = document.querySelectorAll(".albumSection");
 
-//1-5 break 6 - 10 break 10 - 15 break 15 - 20 playlist
-
-function sectionStyle(){
-    for (var x = 0; x < albumSections.length; x++){
-        var place = x + 1;
-        albumSections[x].innerHTML = "<p>section: </p>" + place + "</p>";
-        console.log(x);
-    }
+function isInView(element){
+    var rect = element.getBoundingClientRect();
+    var elemTop = rect.top + (element.offsetHeight / 2);
+    var elemBottom = rect.bottom;
+    var isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+    return isVisible;
 }
 
-sectionStyle();
+var inView,
+    className;
+function test(){
+    inView = [];
+
+    for( var x = 0; x < albumSections.length; x++){
+        if(isInView(albumSections[x])){
+            inView.push(albumSections[x]);
+        }
+    }
+    if(document.querySelector(".active") != null){
+        document.querySelector(".active").classList.remove("active");
+    }
+    className = inView[inView.length-1].id;
+    document.querySelector("." + className).classList.add("active");
+}
+
+window.addEventListener("scroll", test);

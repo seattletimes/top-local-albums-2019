@@ -7,6 +7,7 @@
       <%= t.include("partials/_dataLayer.html") %>
       <%= t.include("partials/_gtm.html") %>
     <% } %>
+    <link href="https://fonts.googleapis.com/css?family=Domine&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -15,30 +16,55 @@
     <% } %>
     
     <responsive-child>
-      <%= t.include("partials/_nav.html") %> 
-
+      <%= t.include("partials/_nav.html") %>
+      <div class="headContent">
+        <h1>THE BEST ALBUMS OF 2019</h1>
+      </div> 
+      <div class="stickyNav">
+        <% for( var x = 20; x > 0; x--){ %>
+          <a href="#s<%= x %>">
+            <button type="button" class="navButton s<%= x %>" data-category="<%= x %>">
+              <%= x %>
+            </button>
+        </a>
+        <% } %>
+      </div>
     
+      <div class="content">
 
-    <div class=" albumSection one" style="height: 800px"></div>
-    <div class=" albumSection two" style="height: 800px"></div>
-    <div class=" albumSection three" style="height: 800px"></div>
-    <div class=" albumSection four" style="height: 800px"></div>
-    <div class=" albumSection five" style="height: 800px; background-color: blue;"></div>
-    <div class=" albumSection six" style="height: 800px"></div>
-    <div class=" albumSection seven" style="height: 800px"></div>
-    <div class=" albumSection eight" style="height: 800px"></div>
-    <div class=" albumSection nine" style="height: 800px"></div>
-    <div class=" albumSection ten" style="height: 800px"></div>
-    <div class=" albumSection eleven" style="height: 800px"></div>
-    <div class=" albumSection twelve" style="height: 800px"></div>
-    <div class=" albumSection thirteen" style="height: 800px"></div>
-    <div class=" albumSection fourteen" style="height: 800px"></div>
-    <div class=" albumSection fifteen" style="height: 800px"></div>
-    <div class=" albumSection sixteen" style="height: 800px"></div>
-    <div class=" albumSection seventeen" style="height: 800px"></div>
-    <div class=" albumSection eighteen" style="height: 800px"></div>
-    <div class=" albumSection nineteen" style="height: 800px"></div>
-    <div class=" albumSection twenty" style="height: 800px"></div>
+          <% json.Sheet1.forEach(function(event) { %>
+            <div class="albumSection" id="s<%= event.num %>">
+              <div class="numContainer">
+                <p class="num"><%= event.num %></p>
+              </div>
+              <div class="sectionHead">
+                <div class="albumCoverContainer">
+                    <img class="albumCover" src="assets/<%= event.art %>.jpg" alt="">
+                    <p class="artCredit"><%= event.artCredit %></p>
+                    <div class="albumEmbed embed">
+                      <iframe class="frame" src="<%= event.spotify %>" width="290" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+                <div class="albumTitleContainer">
+                  <p class="title"><%= event.albumTitle %></p>
+                  <p class="artist"><%= event.artist %></p>
+                </div>
+              </div>
+              <div class="sectionBody">
+                <p class="sectionText">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis rutrum ullamcorper. Vivamus ex augue, varius at hendrerit ut, imperdiet ut nisl. Cras quis arcu scelerisque velit tristique rhoncus sed ut justo. Proin egestas, nisi et mollis ultrices, justo quam lacinia enim, vitae imperdiet purus nunc nec dui. Sed quis consequat lacus. In hac habitasse platea dictumst. Nulla dapibus ex vel pretium dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    <br>
+                    Aenean lobortis est non fermentum lacinia. Sed faucibus odio quis dolor placerat vulputate. Fusce pellentesque diam fringilla facilisis scelerisque. Nulla at eros nec lacus tincidunt laoreet a in ante. Cras non iaculis purus. In sit amet semper ex. Ut efficitur lectus in rutrum bibendum. Aenean commodo dui at odio sollicitudin, a volutpat nibh aliquet. Aliquam pretium lectus nec nibh tincidunt, nec placerat ligula fringilla. Maecenas fermentum, erat sed varius finibus, nunc lorem venenatis tellus, non convallis mauris tellus at massa.
+                </p>
+              </div>
+            </div>
+          <% }) %>
+      </div>
+
+        <div class="playlist embed">
+          <p class="playlistText">Check out songs from the artists:</p>
+            <iframe class="frame" src="https://open.spotify.com/embed/playlist/52tztSjNg1fnPJLd2UKp6V" width="630" height="580" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
 
     </responsive-child>
 
