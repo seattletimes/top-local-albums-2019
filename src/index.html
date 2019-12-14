@@ -18,7 +18,12 @@
     <responsive-child>
       <%= t.include("partials/_nav.html") %>
       <div class="headContent">
-        <h1>THE BEST ALBUMS OF 2019</h1>
+        <div class="headerImage"><img src="assets/header.gif"></div>
+        <p class="chatter">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis rutrum ullamcorper. Vivamus ex augue, varius at hendrerit ut, imperdiet ut nisl. Cras quis arcu scelerisque velit tristique rhoncus sed ut justo. Proin egestas, nisi et mollis ultrices, justo quam lacinia enim, vitae imperdiet purus nunc nec dui. Sed quis consequat lacus. In hac habitasse platea dictumst. Nulla dapibus ex vel pretium dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            <br>
+            Aenean lobortis est non fermentum lacinia. Sed faucibus odio quis dolor placerat vulputate. Fusce pellentesque diam fringilla facilisis scelerisque. Nulla at eros nec lacus tincidunt laoreet a in ante. Cras non iaculis purus. In sit amet semper ex. Ut efficitur lectus in rutrum bibendum. Aenean commodo dui at odio sollicitudin, a volutpat nibh aliquet. Aliquam pretium lectus nec nibh tincidunt, nec placerat ligula fringilla. Maecenas fermentum, erat sed varius finibus, nunc lorem venenatis tellus, non convallis mauris tellus at massa.
+        </p>
       </div> 
       <div class="stickyNav">
         <% for( var x = 20; x > 0; x--){ %>
@@ -67,6 +72,11 @@
         </div>
 
     </responsive-child>
+    
+    <div class="credits">
+        <div>Design and Development by Miranda Hardy</div>
+        <div>Project editing by </div>
+    </div>
 
     <%= t.include("partials/_navBottom.html") %>
     <script src="app.js" async></script>
