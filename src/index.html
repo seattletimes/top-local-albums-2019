@@ -18,7 +18,9 @@
     <responsive-child>
       <%= t.include("partials/_nav.html") %>
       <div class="headContent">
-        <div class="headerImage"><img src="assets/header.gif"></div>
+        <div class="headerImageContainer">
+          <img class="headerImage" src="assets/header.gif">
+        </div>
         <p class="chatter">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis rutrum ullamcorper. Vivamus ex augue, varius at hendrerit ut, imperdiet ut nisl. Cras quis arcu scelerisque velit tristique rhoncus sed ut justo. Proin egestas, nisi et mollis ultrices, justo quam lacinia enim, vitae imperdiet purus nunc nec dui. Sed quis consequat lacus. In hac habitasse platea dictumst. Nulla dapibus ex vel pretium dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
             <br>
@@ -39,9 +41,6 @@
 
           <% json.Sheet1.forEach(function(event) { %>
             <div class="albumSection" id="s<%= event.num %>">
-              <div class="numContainer">
-                <p class="num"><%= event.num %></p>
-              </div>
               <div class="sectionHead">
                 <div class="albumCoverContainer">
                     <img class="albumCover" src="assets/<%= event.art %>.jpg" alt="">
@@ -49,6 +48,9 @@
                     <div class="albumEmbed embed">
                       <iframe class="frame" src="<%= event.spotify %>" width="290" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </div>
+                </div>
+                <div class="numContainer">
+                  <p class="num"><%= event.num %></p>
                 </div>
                 <div class="albumTitleContainer">
                   <p class="title"><%= event.albumTitle %></p>
@@ -62,6 +64,15 @@
                     Aenean lobortis est non fermentum lacinia. Sed faucibus odio quis dolor placerat vulputate. Fusce pellentesque diam fringilla facilisis scelerisque. Nulla at eros nec lacus tincidunt laoreet a in ante. Cras non iaculis purus. In sit amet semper ex. Ut efficitur lectus in rutrum bibendum. Aenean commodo dui at odio sollicitudin, a volutpat nibh aliquet. Aliquam pretium lectus nec nibh tincidunt, nec placerat ligula fringilla. Maecenas fermentum, erat sed varius finibus, nunc lorem venenatis tellus, non convallis mauris tellus at massa.
                 </p>
               </div>
+              <% if(event.num == 14){ %>
+                <div class="breakDiv"><img class=" breakImage" src="assets/spaceNeedleAI.svg"></div>
+              <% } %>
+              <% if(event.num == 11){ %>
+                <div class="breakDiv"><img class=" breakImage" src="assets/headphones.svg"></div>
+              <% } %>
+              <% if(event.num == 6){ %>
+                <div class="breakDiv"><img class=" breakImage" src="assets/record.svg"></div>
+              <% } %>
             </div>
           <% }) %>
       </div>

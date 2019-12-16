@@ -2,10 +2,15 @@
 
 body{
     font-family: @df-sans;
-
 }
 
-
+.headerImageContainer{
+    text-align: center;
+    background-color: #ffc76e;
+    .headerImage{
+        display: inline;
+    }
+}
 
 .chatter{
     padding: 20px 0;
@@ -25,6 +30,10 @@ body{
     a{
         text-decoration: none;
         margin: auto;
+        width: 5%;
+        @media (max-width: 767px) {
+            width: 10%;
+        }
     }
     button{
         font-family: @df-sans;
@@ -34,9 +43,10 @@ body{
         border: none;
         font-size: 16px;
         margin: 0;
-        width: 32px;
+        width: 100%;
         height: 32px;
-        color: #36454f; 
+        color: #70757c; 
+        font-weight: normal;
     }
   }
   
@@ -47,32 +57,55 @@ body{
   }
 
   .active{
-      background-color: #ef915c !important;
+      background-color: #f19b60 !important;
+      color: #36454f !important;
+      font-weight: bold !important;
   }
 
-  .numContainer{
-    width: 800px;
-    margin: auto;
-    @media (max-width: 801px) {
-        min-width: 0px;
-        width: 95%;
-    }
-      .num{
-        color: #ef915c;
-        font-family: 'Domine', serif;
-        margin: 0;
-        font-size: 40px;
-        font-weight: bold;
-      }
+  .content{
+      margin-top: 20px;
   }
+
+  .num{
+    color: #ef915c; 
+    font-family: 'Domine', serif;
+    margin: 0;
+    font-size: 60px;
+    font-weight: bold;
+    margin-left: 20px;
+    @media (max-width: 801px) {
+        margin-left: 0px;
+    }
+  }
+
+@media (max-width: 801px){
+    .albumSection{
+        display: flex;
+        flex-flow: column;
+    }
+    .numContainer{
+        order: 1;
+        line-height: .75;
+        padding-bottom: 10px;
+        width: 100%;
+    }
+    .albumTitleContainer{
+        width: 100%;
+        margin-left: 0 !important;
+        order: 2;
+    }
+    .albumCoverContainer{
+        width: 100%;
+        order: 3;
+    }
+}
+
   .albumSection{
     width: 100%;
-    //height: 800px;
     padding: 0 0 40px 0;
     .sectionHead{
         font-family: 'Domine', serif;
         display: flex;
-
         width: 800px;
         margin: auto;
         border-top: 10px solid #56b3bf;
@@ -81,7 +114,7 @@ body{
         @media (max-width: 801px) {
             flex-wrap: wrap;
             min-width: 0px;
-            width: 95%;
+            width: 98%;
         }
         .albumCover{
             width: 290px;
@@ -93,13 +126,11 @@ body{
             font-style: italic;
             font-size: 13px;  
             font-family: @df-sans;
+            line-height: .3;
       
         }
         .albumTitleContainer{
-            margin-left: 40px;
-            @media (max-width: 801px) {
-                margin-left: 0px;
-            }
+            margin-left: 10px;
             p{
                 margin: 0;
             }
@@ -122,10 +153,20 @@ body{
     }
   }
 
+.breakDiv{
+    text-align: center;
+    margin: 20px 0 0 0;
+    background-color: #da6556;
+    .breakImage{
+        width: 300px;
+        padding: 20px;
+    }
+}
+
 .playlist{
     text-align: center;
     padding: 20px 0;
-    background-color: #ef915c;
+    background-color: #f19b60;
     .playlistText{
         font-family: 'Domine', serif;
         font-size: 28px;
