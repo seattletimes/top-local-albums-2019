@@ -20,6 +20,7 @@
       <div class="headContent">
         <div class="headerImageContainer">
           <img class="headerImage" src="assets/header.gif">
+          <img class="mobileHeaderImage" src="assets/mobileHeader.gif">
         </div>
         <p class="chatter">
           Another year of Seattle music is in the books.
@@ -59,20 +60,24 @@
                 <div class="albumTitleContainer">
                   <p class="title"><%= event.albumTitle %></p>
                   <p class="artist"><%= event.artist %></p>
+                  <p class="sectionTextScreen sectionText">
+                    <%= event.text %> <span class="decorativeBox">&#9632;</span>
+                  </p>
                 </div>
               </div>
               <div class="sectionBody">
                 <p class="sectionText">
-                  <%= event.text %>
+                  <%= event.text %> <span class="decorativeBox">&#9632;</span>
                 </p>
               </div>
-              <% if(event.num == 14){ %>
+              <% if(event.num == 16){ %>
                 <div class="breakDiv"><img class=" breakImage" src="assets/spaceNeedleAI.svg"></div>
               <% } %>
               <% if(event.num == 11){ %>
                 <div class="breakDiv"><img class=" breakImage" src="assets/headphones.svg"></div>
               <% } %>
               <% if(event.num == 6){ %>
+                <%= t.include("partials/_marketing.html", {type: "subscribe", placement: "sidebar"}) %>
                 <div class="breakDiv"><img class=" breakImage" src="assets/record.svg"></div>
               <% } %>
             </div>
@@ -86,12 +91,16 @@
 
     </responsive-child>
     
+
     <div class="credits">
-        <div>Michael Rietmulder: mrietmulder@seattletimes.com; on Twitter: @mrietmulder. Michael Rietmulder is the Seattle Times music writer.</div>
-        <div>Design and Development by Miranda Hardy</div>
-        <div>Project editing by </div>
+        <div>Michael Rietmulder: <a href="mailto:mrietmulder@seattletimes.com" target="_blank">mrietmulder@seattletimes.com</a>; on Twitter: <a href="https://twitter.com/mrietmulder">@mrietmulder</a>. Michael Rietmulder is the Seattle Times music writer.</div>
+        <br>
+        <div class="smallCredit">Design and Development by Miranda Hardy</div>
+        <div class="smallCredit">Project editing by </div>
     </div>
 
+    <!-- <%= t.include("partials/_dontMiss.html", grunt.data.json) %>
+    <%= t.include("partials/_comments.html") %> -->
     <%= t.include("partials/_navBottom.html") %>
     <script src="app.js" async></script>
     <% if (json.project.production) { %>

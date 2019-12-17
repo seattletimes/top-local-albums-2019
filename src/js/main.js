@@ -29,7 +29,7 @@ function isInView(element){
 
 var inView,
     className;
-function test(){
+function scroll(){
     inView = [];
 
     for( var x = 0; x < albumSections.length; x++){
@@ -44,4 +44,4 @@ function test(){
     document.querySelector("." + className).classList.add("active");
 }
 
-window.addEventListener("scroll", test);
+window.addEventListener("scroll", scroll);

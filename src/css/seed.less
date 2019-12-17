@@ -1,4 +1,5 @@
 @import "seattletimes";
+@import "comments";
 
 body{
     font-family: @df-sans;
@@ -10,12 +11,26 @@ body{
     .headerImage{
         display: inline;
     }
+    .mobileHeaderImage{
+        display: none;
+    }
+    @media (max-width: 800px) {
+        .mobileHeaderImage{
+            display:inline;
+        }
+        .headerImage{
+            display: none;
+        }
+    }
 }
 
 .chatter{
-    padding: 20px 0;
+    padding: 40px 0;
     max-width: 630px;
     margin: auto;
+    @media (max-width: 800px) {
+    margin: 0 5px;
+    }
 }
 
 .stickyNav {
@@ -29,6 +44,7 @@ body{
     flex-wrap: wrap;
     border-bottom: 1px solid #36454f;
     background-color: white;
+    cursor: pointer;
     a{
         text-decoration: none;
         margin: auto;
@@ -37,6 +53,13 @@ body{
             width: 10%;
         }
     }
+    @media (min-width: 800px){
+        button:hover{
+            cursor:pointer;
+            background-color: #f19b60 !important;
+        }
+    }
+
     button{
         font-family: @df-sans;
         text-align: center;
@@ -72,9 +95,10 @@ body{
     color: #ef915c; 
     font-family: 'Domine', serif;
     margin: 0;
-    font-size: 60px;
+    font-size: 3.5em;
     font-weight: bold;
     margin-left: 20px;
+    margin-top: -12px;
     @media (max-width: 801px) {
         margin-left: 0px;
     }
@@ -84,6 +108,7 @@ body{
     .albumSection{
         display: flex;
         flex-flow: column;
+        padding-bottom: 0 !important;;
     }
     .numContainer{
         order: 1;
@@ -95,10 +120,20 @@ body{
         width: 100%;
         margin-left: 0 !important;
         order: 2;
+        .sectionTextScreen{
+            display: none;
+        }
     }
     .albumCoverContainer{
         width: 100%;
         order: 3;
+    }
+    .sectionBody{
+        display: inline !important;
+        margin: 0 5px !important;
+    }
+    .marketing{
+        margin: 10px 0 !important;
     }
 }
 
@@ -110,9 +145,10 @@ body{
         display: flex;
         width: 800px;
         margin: auto;
-        border-top: 8px solid #56b3bf;
-        border-right: 8px solid #56b3bf;
         padding-top: 20px;
+        border-top: 6px solid #56b3bf;
+        border-right: 6px solid #56b3bf;
+        margin-top: 40px;
         @media (max-width: 801px) {
             flex-wrap: wrap;
             min-width: 0px;
@@ -137,27 +173,36 @@ body{
                 margin: 0;
             }
             .title{
-                font-size: 38px;
+                font-size: 1.5em;
                 font-weight: bold;
             }
             .artist{
-                font-size: 30px;
+                font-size: 1em;
                 font-style: italic;
             }
         }
     }
-    .sectionBody{
+    .sectionText{
         max-width: 630px;
+    }
+    .sectionTextScreen{
+        padding-top: 40px;
+        padding-right: 45px;
+    }
+    .sectionBody{
+        display:none;
         margin: auto;
-        .sectionText{
-            display: inline;
-        }
+    }
+    .decorativeBox{
+        color:#f19b60;
+        font-size: 1.5em;
+        line-height: .75em;
     }
   }
 
 .breakDiv{
     text-align: center;
-    margin: 20px 0 0 0;
+    margin: 60px 0 0 0;
     background-color: #da6556;
     .breakImage{
         width: 300px;
@@ -171,12 +216,12 @@ body{
     background-color: #f19b60;
     .playlistText{
         font-family: 'Domine', serif;
-        font-size: 28px;
+        font-size: 1em;
         font-weight: bold;
         max-width: 630px;
-        margin: 0 auto 20px auto;
+        margin: 20px auto 20px auto;
         text-align: left;
-        border-bottom: 10px solid #56b3bf;
+        border-bottom: 6px solid #56b3bf;
     }
     .frame{
         display: inline;
@@ -184,8 +229,19 @@ body{
 }
 
 .credits {
-    margin: 30px 0;
+    margin: 40px auto;
     font-family: "ff-dagny-web-pro", Helvetica Neue, Helvetica, sans-serif;
-    font-size: 14px;
-    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1em;
+    max-width: 630px;
+    .smallCredit{
+        font-style: normal;
+        font-size: 0.8em;
+    }
+
+  }
+
+  .marketing{
+      margin: 60px auto;
   }
