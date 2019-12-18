@@ -19,6 +19,7 @@ window.addEventListener('scroll', stickyNavigation);
 
 var albumSections = document.querySelectorAll(".albumSection");
 
+
 function isInView(element){
     var rect = element.getBoundingClientRect();
     var elemTop = rect.top + (element.offsetHeight / 2);
@@ -31,7 +32,6 @@ var inView,
     className;
 function scroll(){
     inView = [];
-
     for( var x = 0; x < albumSections.length; x++){
         if(isInView(albumSections[x])){
             inView.push(albumSections[x]);
@@ -40,8 +40,11 @@ function scroll(){
     if(document.querySelector(".active") != null){
         document.querySelector(".active").classList.remove("active");
     }
-    className = inView[inView.length-1].id;
-    document.querySelector("." + className).classList.add("active");
+
+    if(inView.length > 0){
+        className = inView[inView.length-1].id;
+        document.querySelector("." + className).classList.add("active");
+    }
 }
 
 window.addEventListener("scroll", scroll);

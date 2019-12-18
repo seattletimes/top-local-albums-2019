@@ -19,22 +19,32 @@
       <%= t.include("partials/_nav.html") %>
       <div class="headContent">
         <div class="headerImageContainer">
-          <img class="headerImage" src="assets/header.gif">
-          <img class="mobileHeaderImage" src="assets/mobileHeader.gif">
+          <img class="headerImage" alt="Animated Text- The Best of 2019" src="assets/header.gif">
+          <img class="mobileHeaderImage" alt="Animated Text- The Best of 2019" src="assets/mobileHeader.gif">
         </div>
-        <p class="art-credit"> / The Seattle Times </p>
-        <p class="chatter">
-        <span class="publish-date">Published Dec. 18, 2019</span> <br><br>
+        <p class="art-credit">Miranda Hardy and James Abundis / The Seattle Times </p>
+
+       
+
+        <div class="by">
+          <br>
+          <p class="byline"> By Michael Rietmulder </p>
+           <p class="staff-position"> Seattle Times music writer</p>
+           <span class="publish-date">Published Dec. 18, 2019</span> 
+
+          </div>
+
+          <p class="chatter">
           For Seattle music, 2019 will go down as 
-          <a href="https://www.seattletimes.com/opinion/editorials/brandi-carliles-success-and-deeds-do-washington-proud/" target="_blank" rel="noopener noreferrer">
+          <a class="textLink" href="https://www.seattletimes.com/opinion/editorials/brandi-carliles-success-and-deeds-do-washington-proud/" target="_blank" rel="noopener noreferrer">
             The Year of Brandi Carlile
           </a>
           . Yes, our 
-          <a href="https://www.seattletimes.com/entertainment/music/brandi-carlile-gets-4-grammy-award-nominations-several-artists-with-seattle-area-ties-get-nods-too/" target="_blank" rel="noopener noreferrer">
+          <a class="textLink" href="https://www.seattletimes.com/entertainment/music/brandi-carlile-gets-4-grammy-award-nominations-several-artists-with-seattle-area-ties-get-nods-too/" target="_blank" rel="noopener noreferrer">
             Grammy-stormin’ folk rock ‘n’ roller’s 
           </a>
           leap into the industry’s top circles was 
-          <a href="https://www.seattletimes.com/seattle-news/this-means-everything-to-me-brandi-carlile-honored-at-mopop-where-she-once-busked/" target="_blank" rel="noopener noreferrer">
+          <a class="textLink" href="https://www.seattletimes.com/seattle-news/this-means-everything-to-me-brandi-carlile-honored-at-mopop-where-she-once-busked/" target="_blank" rel="noopener noreferrer">
             one of the bigger stories of the year
           </a>
           . But back home, it certainly wasn’t the only one.
@@ -45,22 +55,24 @@
         <br><br>
           To help us sort through all the releases, we solicited input from more than 20 writers, radio tastemakers and plugged-in media 
           folks, who voted for their top 10 albums of the year from Seattle and Washington-state artists. (Check out the individual ballots 
-          <a href="https://www.seattletimes.com/entertainment/music/seattle-times-albums-of-the-year-critics-poll-2019-the-individual-ballots/" target="_blank" rel="noopener noreferrer"> 
+          <a class="textLink" href="https://www.seattletimes.com/entertainment/music/seattle-times-albums-of-the-year-critics-poll-2019-the-individual-ballots/" target="_blank" rel="noopener noreferrer"> 
             here
           </a>.)
           Using a sliding points system, we threw their ballots in the ol’ vote-counting machine — an off-brand Microsoft Office program and an 
            iPhone calculator — and came up with the best local albums of the year in our 
-           <a href="https://www.seattletimes.com/entertainment/music/the-best-seattle-albums-of-2018-critics-choose-the-top-20-releases-of-the-year/" target="_blank" rel="noopener noreferrer"> 
+           <a class="textLink" href="https://www.seattletimes.com/entertainment/music/the-best-seattle-albums-of-2018-critics-choose-the-top-20-releases-of-the-year/" target="_blank" rel="noopener noreferrer"> 
             second-annual critics poll
           </a>
           .
         <br><br>
         
         </p>
-        <a href="#playlist"><div class="linkPlaylist">Check out our playlist of songs from the artists <span style="color: #f19b60;">&#9654;</span></div></a>
+        <a href="#playlist"><div class="linkPlaylist textLink">Listen to songs from the artists <span style="color: #f19b60; font-style: normal">&#9654;</span></div></a>
       <p class="chatter chatter2">
-          Without further ado, here are the results.
+          Without further ado, here is the countdown from twenty to one.
         </p>
+
+
       </div> 
       <div class="stickyNav">
         <% for( var x = 20; x > 0; x--){ %>
@@ -78,11 +90,11 @@
             <div class="albumSection" id="s<%= event.num %>">
               <div class="sectionHead">
                 <div class="albumCoverContainer">
-                    <img class="albumCover" src="assets/<%= event.art %>.jpg" alt="">
-                    <p class="artCredit"><%= event.artCredit %></p>
+                    <img class="albumCover" src="assets/<%= event.art %>.jpg" alt="Cover art for <%= event.albumTitle %>">
                     <div class="albumEmbed embed">
                       <iframe class="frame" src="<%= event.spotify %>" width="290" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </div>
+                    <p class="artCredit"><%= event.artCredit %></p>
                 </div>
                 <div class="numContainer">
                   <p class="num"><%= event.num %></p>
@@ -101,21 +113,33 @@
                 </p>
               </div>
               <% if(event.num == 16){ %>
-                <div class="breakDiv"><img class=" breakImage" src="assets/spaceNeedleAI.svg"></div>
+                <div class="breakDiv first">
+                  <img class=" breakImage" alt="illustration of space needle" src="assets/spaceNeedleAI.svg">
+                  <img class=" breakImage extra" alt="illustration of space needle" src="assets/spaceNeedleAI.svg">
+                  <img class=" breakImage extra" alt="illustration of space needle" src="assets/spaceNeedleAI.svg">
+                </div>
               <% } %>
               <% if(event.num == 11){ %>
-                <div class="breakDiv"><img class=" breakImage" src="assets/headphones.svg"></div>
+                <div class="breakDiv second">
+                  <img class=" breakImage" alt="illustration of over the ear headphones" src="assets/headphones.svg">
+                  <img class=" breakImage extra" alt="illustration of over the ear headphones" src="assets/headphones.svg">
+                  <img class=" breakImage extra" alt="illustration of over the ear headphones" src="assets/headphones.svg">
+                </div>
               <% } %>
               <% if(event.num == 6){ %>
                 <%= t.include("partials/_marketing.html", {type: "subscribe", placement: "sidebar"}) %>
-                <div class="breakDiv"><img class=" breakImage" src="assets/record.svg"></div>
+                <div class="breakDiv third">
+                  <img class=" breakImage" alt="illustrationof a vinyl record" src="assets/record.svg">
+                  <img class=" breakImage extra" alt="illustrationof a vinyl record" src="assets/record.svg"> 
+                  <img class=" breakImage extra" alt="illustrationof a vinyl record" src="assets/record.svg">                                   
+                </div>
               <% } %>
             </div>
           <% }) %>
       </div>
 <br id="playlist">
         <div class="playlist embed" >
-          <p class="playlistText">Check out songs from the artists: <br> <span style="font-weight: normal; font-style:italic; font-size: .95em;">Note: Some of these songs contain explicit lyrics.</span></p>
+          <p class="playlistText">Check out songs from the artists: <br> <span style="font-weight: normal; font-style:italic; font-size: .85em;">(Note: Some of these songs contain explicit lyrics.)</span></p>
             <iframe class="frame" src="https://open.spotify.com/embed/playlist/52tztSjNg1fnPJLd2UKp6V" width="630" height="580" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
 
@@ -125,8 +149,8 @@
     <div class="credits">
         <div>Michael Rietmulder: <a href="mailto:mrietmulder@seattletimes.com" target="_blank">mrietmulder@seattletimes.com</a>; on Twitter: <a href="https://twitter.com/mrietmulder">@mrietmulder</a>. Michael Rietmulder is the Seattle Times music writer.</div>
         <br>
-        <div class="smallCredit">Design and development by Miranda Hardy</div>
-        <div class="smallCredit">Project editing by Trevor Lenzmeier</div>
+        <div >Design and development by Miranda Hardy</div>
+        <div>Graphics and illustration Miranda Hardy and James Abundis</div>
     </div>
 
     <%= t.include("partials/_dontMiss.html", grunt.data.json) %>
