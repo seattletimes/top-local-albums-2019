@@ -5,9 +5,18 @@ body{
     font-family: @df-sans;
 }
 
+responsive-child{
+    // @media mobile{
+    //     margin: 0 5px !important;
+    // }
+}
+
 .art-credit{
     padding-right: 10px;
     margin-top: 3px;
+    // @media mobile{
+    //     margin-left: 5px ;
+    // }
 }
 
 .textLink:link{
@@ -45,9 +54,9 @@ body{
     padding-top: 10px;
     max-width: 630px;
     margin: auto;
-    @media (max-width: 800px) {
-    margin: 0 5px;
-    }
+    // @media (max-width: 800px) {
+    // margin: 0 5px;
+    // }
 }
 
 .chatter2{
@@ -76,6 +85,9 @@ body{
 .by{
     max-width: 630px;
     margin: auto;
+    // @media mobile{
+    //     margin-left: 5px !important;
+    // }
 
 }
 
@@ -201,8 +213,15 @@ body{
             width: 98%;
         }
         .albumCover{
-            width: 290px;
-            min-width: 290px;
+ 
+            width: 300px;
+            min-width: 295px;
+
+        }
+        .albumEmbed{
+            width: 300px;
+            min-width: 295px;
+
         }
         .artCredit{
             margin: 0 0 5px 0;;
@@ -225,6 +244,7 @@ body{
             .artist{
                 font-size: 1em;
                 font-style: italic;
+                padding-bottom: 5px;
             }
         }
     }

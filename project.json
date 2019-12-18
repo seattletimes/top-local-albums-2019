@@ -9,14 +9,14 @@
       "path": "2019/best-seattle-albums"
     }
   },
-  "title": "",
-  "description": "",
-  "author": "",
-  "url": "",
-  "post_id": 0,
+  "title": "The best Seattle albums of 2019: Critics choose the top 20 local releases",
+  "description": "Second annual critics poll of the best local albums of the year. Take a look at the Top 20.",
+  "author": "Michael Rietmulder",
+  "url": "https://projects.seattletimes.com/2019/best-seattle-albums",
+  "post_id": 12135919,
   "image": "assets/social.jpg",
   "sheets": ["1TizQWwRn4eJrVllWpFt7ABFasFlnDe57zejKPMymL8o"],
   "docs": [],
   "embedded": false,
-  "production": false
+  "production": true
 }
