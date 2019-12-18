@@ -38,12 +38,12 @@ function scroll(){
         }
     }
     if(document.querySelector(".active-section") != null){
-        document.querySelector(".active-section").classList.remove(".active-section");
+        document.querySelector(".active-section").classList.remove("active-section");
     }
 
     if(inView.length > 0){
         className = inView[inView.length-1].id;
-        document.querySelector("." + className).classList.add(".active-section");
+        document.querySelector("." + className).classList.add("active-section");
     }
 }
 
