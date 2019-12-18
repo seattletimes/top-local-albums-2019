@@ -37,13 +37,13 @@ function scroll(){
             inView.push(albumSections[x]);
         }
     }
-    if(document.querySelector(".active") != null){
-        document.querySelector(".active").classList.remove("active");
+    if(document.querySelector(".active-section") != null){
+        document.querySelector(".active-section").classList.remove(".active-section");
     }
 
     if(inView.length > 0){
         className = inView[inView.length-1].id;
-        document.querySelector("." + className).classList.add("active");
+        document.querySelector("." + className).classList.add(".active-section");
     }
 }
 
